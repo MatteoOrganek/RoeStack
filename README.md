@@ -18,3 +18,6 @@ You will need to install the following:
 
 * node.js  (windows: https://nodejs.org/en/download/)
 * docker desktop (for windows, this will also prompt you to install linux subsystem for windows https://docs.docker.com/desktop/windows/install/ )
+
+#### Collaborators
+Oleksandr
