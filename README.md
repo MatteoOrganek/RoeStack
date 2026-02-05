@@ -22,3 +22,4 @@ You will need to install the following:
 #### Collaborators
 Oleksandr
 Mateusz
+Julianna Eldridge
