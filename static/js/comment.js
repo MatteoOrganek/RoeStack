@@ -90,7 +90,7 @@ document.addEventListener("click", async (e) => {
     const commentThread = replyBtn.closest(".comment-thread");
 
     document.querySelectorAll(".reply-form").forEach((form) => {
-      const input = form.querySelector(".reply-input");
+      input = form.querySelector(".reply-input");
       if (!input.value.trim()) {
         form.remove();
       }

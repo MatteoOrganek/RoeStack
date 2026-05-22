@@ -22,12 +22,12 @@ class User {
    */
   constructor(
     id = -1,
-    name = "Undefined",
-    role = "Undefined",
-    bio = "Undefined",
+    name = "Deleted User",
+    role = "This User has been deleted.",
+    bio = "This User has been deleted.",
     isMod = false,
-    email = "Undefined",
-    passwordHash = "Undefined",
+    email = "This User has been deleted.",
+    passwordHash = "This User has been deleted.",
     createdAt = new Date("2000-01-01"),
   ) {
     this.id = id;
@@ -59,6 +59,7 @@ class User {
     const results = await db.query(sql, [id]);
 
     const user = results[0];
+    if (!user) {return new User()}
     // Save the results rows in the User object
     this.id = user.id;
     this.name = user.name;

@@ -6,11 +6,11 @@ const courses = [
   "Psychology",
 ];
 
-const input = document.querySelector(".course-input");
+const inputv = document.querySelector(".course-input");
 const dropdown = document.querySelector(".course-dropdown");
 
-input.addEventListener("input", () => {
-  const value = input.value.toLowerCase();
+inputv.addEventListener("input", () => {
+  const value = inputv.value.toLowerCase();
 
   dropdown.innerHTML = "";
 
@@ -26,7 +26,7 @@ input.addEventListener("input", () => {
     li.textContent = course;
 
     li.addEventListener("click", () => {
-      input.value = course;
+      inputv.value = course;
       dropdown.classList.remove("active");
     });
 

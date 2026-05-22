@@ -116,6 +116,7 @@ class ContentManager {
         let searchClause = "";
         if (search !== '') {
             const needsWhere = whereClause === "" || sortByPopularity;
+            search = `%${search}%`
             searchClause = `${needsWhere ? "WHERE" : "AND"} posts.title LIKE ?`;
             params.push(search);
         }
@@ -127,6 +128,7 @@ class ContentManager {
 
         // --- Final query ---
         const sql = `SELECT posts.id FROM posts ${whereClause} ${searchClause} ${groupByClause} ${orderByClause} ${sortOrder}`;
+        console.log(params)
         console.log("SQL:", sql);
 
         const results = await db.query(sql, params);

@@ -20,15 +20,16 @@ mixin commentItem(comment, content)
                     button.icon-btn(type="button" onclick="toggleMenu(this)")
                         img.options(src="/images/icons/three-vertical-dots.svg" alt="Options Icon")
                     if !comment.isDeleted
-                        ul.dropdown-menu 
-                            li 
-                                if content.session.user && (Number(content.session.user.id) === Number(comment.user.id) || Number(comment.user.isMod) === 1)
+                        ul.dropdown-menu
+                            if content.session.user.id === comment.user.id || Number(content.session.user.isMod) === 1 
+                                li 
                                     a.delete-comment(
                                         href="#"
                                         data-comment-id=comment.id
                                         style="color: red;"
                                     ) Delete comment
-                                else
+                            else 
+                                li 
                                     a(href="#" style="color: red;") Report comment
                 .role= comment.user.role
 
